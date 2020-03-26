@@ -12,6 +12,12 @@
   <packaging>jar</packaging>
 
   <dependencies>
+    <!--Sorry My net sucked and I could not find this jar maybe maven settings problem> so I manually added the jar. -->
+    <dependency>
+      <groupId>com.typesafe.play</groupId>
+      <artifactId>filters-helpers_2.12</artifactId>
+      <version>2.8.1</version>
+    </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>product-api</artifactId>
@@ -74,6 +80,7 @@
       <groupId>javax.validation</groupId>
       <artifactId>validation-api</artifactId>
     </dependency>
+
   </dependencies>
 
   <build>

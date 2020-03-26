@@ -20,9 +20,9 @@ public interface ProductService extends Service {
         return Service.named("products")
                 .withCalls(
                         Service.restCall(Method.POST,"/product/:inventoryId",this::addProduct),
-                        Service.restCall(Method.POST, "/product/search",this::search)
+                        Service.restCall(Method.POST, "/product/search/",this::search)
                 ).withAutoAcl(true).withServiceAcls(
-                ServiceAcl.methodAndPath(Method.OPTIONS, "/product/search")
+                ServiceAcl.methodAndPath(Method.OPTIONS, "/product/*")
         );
     }
 }

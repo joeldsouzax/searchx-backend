@@ -22,7 +22,7 @@ public class ProductsRepository {
         return jpaSession
                 .withTransaction(
                         em -> em.createQuery( "SELECT NEW com.searchx.rs2.product.api.Product(p.id, p.name, p.type, p.userId)" +
-                " FROM ProductJpaEntity p" + " WHERE p.name = " + productName + " AND p.type = " + productType,Product.class)
+                " FROM Product p" + " WHERE p.name = :name  AND p.type = :type",Product.class).setParameter("name",productName).setParameter("type",productType)
                                 .getResultList()
         ).thenApply(TreePVector::from);
     }
