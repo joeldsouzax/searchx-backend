@@ -13,8 +13,8 @@ public class BasketException extends RuntimeException implements Jsonable {
     public final String message;
 
     @JsonCreator
-    public BasketException(String message, String message1) {
+    public BasketException(String message) {
         super(message);
-        this.message = message1;
+        this.message = message;
     }
 }

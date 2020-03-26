@@ -72,6 +72,13 @@
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.19</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
@@ -80,7 +87,7 @@
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-entitymanager</artifactId>
-                <version>5.4.12.Final</version>
+                <version>5.4.11</version>
             </dependency>
             <dependency>
                 <groupId>org.hibernate.javax.persistence</groupId>

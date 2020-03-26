@@ -24,8 +24,13 @@ public class InventoryProcessor extends ReadSideProcessor<InventoryEvent> {
 
     @Override
     public ReadSideHandler<InventoryEvent> buildHandler() {
-        return readSide.<InventoryEvent>builder("rs2-product").setGlobalPrepare(this::createSchema)
-                .setEventHandler(InventoryEvent.ProductCreated.class,this::createProduct).build();
+
+        JpaReadSide.ReadSideHandlerBuilder<InventoryEvent> builder = readSide.builder("inventorySummaryOffset");
+        builder.setGlobalPrepare(this::createSchema);
+        builder.setEventHandler(InventoryEvent.ProductCreated.class,this::createProduct).build();
+
+        return builder.build();
+
     }
 
     @Override
